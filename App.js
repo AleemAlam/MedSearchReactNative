@@ -1,21 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React, { useEffect } from "react";
+import { StyleSheet, Image, SafeAreaView, Text, View } from "react-native";
+import { searchData } from "./Network/networkRequest";
+import WelcomeScreen from "./Screens/WelcomeScreen";
 
 export default function App() {
+  // useEffect(() => {
+  //   searchData().then((res) => console.log(res));
+  // }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // <SafeAreaView style={styles.container}>
+    //   <Text>Hello</Text>
+    //   <StatusBar style="auto" />
+    //   <Image
+    //     fadeDuration={1000}
+    //     blurRadius={0}
+    //     source={{
+    //       width: 100,
+    //       height: 100,
+    //       uri:
+    //         "https://i.pinimg.com/236x/97/a1/07/97a10733a8482bee6cd7d20c3b6fa7d1.jpg",
+    //     }}
+    //   />
+    // </SafeAreaView>
+    <WelcomeScreen />
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "blue",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
